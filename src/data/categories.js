@@ -1,0 +1,22 @@
+export default categories = [
+    { name: "smartphones", icon: "📱" },
+    { name: "laptops", icon: "💻" },
+    { name: "fragrances", icon: "💐" },
+    { name: "skincare", icon: "🧴" },
+    { name: "groceries", icon: "🛒" },
+    { name: "home-decoration", icon: "🏡" },
+    { name: "furniture", icon: "🪑" },
+    { name: "tops", icon: "👚" },
+    { name: "womens-dresses", icon: "👗" },
+    { name: "womens-shoes", icon: "👠" },
+    { name: "mens-shirts", icon: "👕" },
+    { name: "mens-shoes", icon: "👞" },
+    { name: "mens-watches", icon: "⌚" },
+    { name: "womens-watches", icon: "⌚" },
+    { name: "womens-bags", icon: "👜" },
+    { name: "womens-jewellery", icon: "💍" },
+    { name: "sunglasses", icon: "🕶️" },
+    { name: "automotive", icon: "🚗" },
+    { name: "motorcycle", icon: "🏍️" },
+    { name: "lighting", icon: "💡" }
+]
