@@ -13,7 +13,8 @@ const Header = ({title="Home"}) => {
 const styles = StyleSheet.create({
     title: {
         color: colors.sat,
-        fontSize: 32
+        fontSize: 32,
+        fontFamily: 'manrope'
     },
     container: {
         justifyContent: 'center',

@@ -1,15 +1,15 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import colors from '../theme/colors'
 
-const ProductItem = ({title, brand}) => {
+const ProductItem = ({product, navigation}) => {
     return (
-        <View style={s.container}>
-            <Text style={s.title}>{title}</Text>
+        <Pressable onPress={() => {navigation.navigate('productDetail', {product})}} style={s.container}>
+            <Text style={s.title}>{product.title}</Text>
             <View style={s.brandContainer}>
-                <Text style={s.brand}>{brand}</Text>
+                <Text style={s.brand}>{product.brand}</Text>
             </View>
-        </View>
+        </Pressable>
     )
 }
 
@@ -31,7 +31,8 @@ const s = StyleSheet.create({
     },
     title: {
         width: 195,
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'manrope'
     },
     brandContainer: {
         width: 80,
@@ -46,7 +47,7 @@ const s = StyleSheet.create({
         paddingHorizontal: 8,
         textAlign: 'center',
         color: 'white',
-        
+        fontFamily: 'manrope'
     }
 })
 

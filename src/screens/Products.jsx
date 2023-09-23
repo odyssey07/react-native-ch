@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Search from '../components/Search';
 import Header from '../components/Header';
@@ -12,12 +12,12 @@ function toTitle(phrase) {
         .join(' ')
 }
 
-const Products = ({ category }) => {
+const Products = ({ route, navigation }) => {
     const [text, setText] = useState('');
     const [categoryProd, setCategoryProd] = useState([]);
     const [showingProd, setShowingProd] = useState([]);
 
-    console.log(showingProd, categoryProd)
+    const category = route.params.category.name;
 
     useEffect(() => {
         setShowingProd(categoryProd);
@@ -28,7 +28,7 @@ const Products = ({ category }) => {
             setShowingProd(filterByTitleProd)
         }
     }, [text, category]) 
-
+    
     useEffect(() => {
         const filterByCategory = products.filter(product => product.category === category);
         setCategoryProd(filterByCategory);
@@ -45,8 +45,8 @@ const Products = ({ category }) => {
                     keyExtractor={product => product.id}
                     renderItem={({item: product}) => 
                         <ProductItem
-                            title={product.title}
-                            brand={product.brand}
+                            product={product}
+                            navigation={navigation}
                         />
                     }
                 />

@@ -1,5 +1,5 @@
-import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import { View, TextInput, Pressable, StyleSheet } from 'react-native';
+import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import colors from '../theme/colors';
 
@@ -33,7 +33,9 @@ const s = StyleSheet.create({
         marginBottom: 10
     },
     text: {
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'manrope',
+        // backgroundColor: 'red'
     }
 })
 

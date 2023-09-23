@@ -9,32 +9,18 @@ function toTitle(phrase) {
         .join(' ')
 }
 
-const CategoryItem = ({ item }) => {
-    // console.log(item)
+const CategoryItem = ({ category, navigation }) => {
     return (
-        <View style={s.container}>
+        <Pressable style={s.container} onPress={() => {navigation.navigate("products", { category})}}>
             <View style={s.iconContainer}>
-                <Text style={s.icon}>{item.icon}</Text>
+                <Text style={s.icon}>{category.icon}</Text>
             </View>
-            <Text style={s.title}>{toTitle(item.name)}</Text>
-
-
-            <Pressable onPress={() => console.log(item)}>
-                <Text style={s.p}>+</Text>
-            </Pressable>
-        </View>
+            <Text style={s.title}>{toTitle(category.name)}</Text>
+        </Pressable>
     )
 }
 
-const s = StyleSheet.create({
-    p: {
-        color: 'white',
-        fontSize: 32,
-        backgroundColor: colors.mid
-    },
-
-
-    
+const s = StyleSheet.create({  
     container: {
         flexDirection: 'row',
         backgroundColor: colors.sat,
@@ -49,7 +35,7 @@ const s = StyleSheet.create({
     title: {
         fontSize: 20,
         color: colors.dark,
-        marginLeft: 10
+        marginLeft: 10,
     },
     iconContainer: {
         backgroundColor: colors.dark,
